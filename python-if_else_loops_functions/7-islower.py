@@ -2,6 +2,6 @@
 def islower(c):
     check = ord(c)
     if check >= 97 and check <= 122:
-        return TRUE
+        return True
     else:
-        return FALSE
+        return False
