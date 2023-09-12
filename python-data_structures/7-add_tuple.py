@@ -13,4 +13,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
             tuple_b = 0, 0
     apple_a = tuple_a[0] + tuple_b[0]
     apple_b = tuple_a[1] + tuple_b[1]
-    return(apple_a, apple_b)
+    return apple_a, apple_b
