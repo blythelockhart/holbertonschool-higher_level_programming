@@ -1,8 +1,4 @@
 #!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
-    for i in set_1:
-        for j in set_2:
-            if i == j:
-              del set_1[i]
-              del set_2[j]
-    return set_1, set_2
+    new_s = set_1 ^ set_2
+    return new_s
