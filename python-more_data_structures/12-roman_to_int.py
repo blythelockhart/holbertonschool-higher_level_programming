@@ -13,9 +13,9 @@ def roman_to_int(roman_string):
     prev_value = 0
     for char in roman_string[::-1]:
         value = roman_dict[char]
-        if value < prev_value:
-            num -= value
-        else:
+        if value > prev_value:
             num += value
+        else:
+            num -= value
         prev_value = value
     return num
