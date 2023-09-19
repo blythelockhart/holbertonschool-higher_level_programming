@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Add two integers."""
 
+
 def add_integer(a, b=98):
     """Return the sum of two integers."""
     if type(a) is not float and type(a) is not int:
