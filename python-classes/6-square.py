@@ -1,1 +1,37 @@
 #!/usr/bin/python3
+
+class Square:
+    def __init__(self, size=0, position=(0, 0)):
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
+    def area(self):
+        return (self.__size ** 2)
+    def size(self):
+        return self.__size
+    def size(self, value):
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+    def my_print(self):
+        if size == 0:
+            print()
+        else:
+            for i in range(self.__size):
+                print('#', end="")
+            print()
+    def position(self):
+        return self.__position
+    def position(self, value):
+        if type(position) is not tuple or
+            self is not int or
+            value is not int or
+            self < 0 or 
+            value < 0:
+                raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = position
