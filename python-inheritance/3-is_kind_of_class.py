@@ -9,6 +9,6 @@ def is_kind_of_class(obj, a_class):
         obj (any): The object to evaluate.
         a_class (any): The class to evaluate against.
     """
-    if isinstance(obj, a_class) or issubclass(type(obj), a_class)::
+    if isinstance(obj, a_class) or issubclass(type(obj), a_class):
         return True
     return False
