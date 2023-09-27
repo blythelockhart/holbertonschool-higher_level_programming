@@ -21,11 +21,11 @@ class Student:
             attrs (list): A list of attribute names as strings.
         """
         dictionary = {}
-        if type(attrs) is list:
+        if type(attrs) is list and attrs is not None:
             for i in attrs:
                 if type(i) is not str:
                     return self.__dict__
-                if i in self.__dict__keys():
+                if i in self.__dict__.keys():
                     dictionary[i] = self.__dict__[i]
             return dictionary
         return self.__dict__
