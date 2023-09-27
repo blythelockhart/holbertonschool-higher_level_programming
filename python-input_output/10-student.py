@@ -20,14 +20,14 @@ class Student:
         Args:
             attrs (list): A list of attribute names as strings.
         """
-        dictionary = {}
         if attrs is None:
             return self.__dict__
         if not isinstance(attrs, list):
             return self.__dict__
+        dictionary = {}
         for i in attrs:
             if not isinstance(i, str):
-                return self.__dict__
-            if i in self.__dict__:
-                dictionary[i] = self.__dict__[i]
+                continue
+            if hasattr(self, i):
+                dictionary[i] = getattr(self, i)
         return dictionary
