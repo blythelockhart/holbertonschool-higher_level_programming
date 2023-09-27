@@ -20,9 +20,7 @@ class Student:
         Args:
             attrs (list): A list of attribute names as strings.
         """
-        dictionary = {}
         if type(attrs) is list and attrs is not None
         and all(type(i) is str for i in attrs):
-            dictionary = {j: getattr(self, j) for j in attrs if hasattr(self, j)}
-            return dictionary
+            return {j: getattr(self, j) for j in attrs if hasattr(self, j)}
         return self.__dict__
