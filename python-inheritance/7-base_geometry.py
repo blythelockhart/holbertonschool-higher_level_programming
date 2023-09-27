@@ -2,8 +2,8 @@
 """ Define class: BaseGeometry. """
 
 
-class BaseGeometry:
-    """ Base geometry. """
+class BaseGeometry():
+    """ BaseGeometry. """
     def area(self):
         """ Raise exception. """
         raise Exception("area() is not implemented")
@@ -12,7 +12,7 @@ class BaseGeometry:
         """ Validate a value as an integer.
         Args:
             name (str): The name of the value.
-            value (int): The value of validate.
+            value (int): The value to validate.
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))

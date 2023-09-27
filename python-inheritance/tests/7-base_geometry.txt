@@ -1,59 +1,60 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> BG = BaseGeometry()
 
->>> BaseGeometry.integer_validator('name', 42)
+>>> BG.integer_validator("name",42)
 
->>> BaseGeometry.integer_validator()
+>>> BG.integer_validator()
 Traceback (most recent call last):
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> Base.Geometry.integer_validator('name')
+>>> BG.integer_validator("name")
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> BaseGeometry.integer_validator('name', 0)
+>>> BG.integer_validator("name",0)
 Traceback (most recent call last):
 ValueError: name must be greater than 0
 
->>> BaseGeometry.integer_validator('name', -42)
+>>> BG.integer_validator("name",-42)
 Traceback (most recent call last):
 ValueError: name must be greater than 0
 
->>> BaseGeometry.integer_validator('name', [42])
+>>> BG.integer_validator("name",[42])
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.integer_validator('name', (42, ))
+>>> BG.integer_validator("name",(42, ))
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.integer_validator('name', {4, 2})
+>>> BG.integer_validator("name",{4, 2})
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.integer_validator('name', True)
+>>> BG.integer_validator("name",True)
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.integer_validator('name', None)
+>>> BG.integer_validator("name",None)
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.integer_validator('name', 'Blythe')
+>>> BG.integer_validator("name",'Blythe')
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.integer_validator('name', 1e900)
+>>> BG.integer_validator("name",1e900)
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> Base Geometry.integer_validator('name', float('nan'))
+>>> BG.integer_validator("name",float('nan'))
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.integer_validator('name', object)
+>>> BG.integer_validator("name",object)
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> BaseGeometry.area()
+>>> BG.area()
 Traceback (most recent call last):
 Exception: area() is not implemented

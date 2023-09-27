@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-""" Define class: Square. """
+""" Define a square. """
 
 
 Rectangle = __import__('9-rectangle').Rectangle
+
+
 class Square(Rectangle):
     """ A square. """
     def __init__(self, size):
-        """ A new Square.
+        """ A new square.
         Args:
             size (int): The size of the square.
         """

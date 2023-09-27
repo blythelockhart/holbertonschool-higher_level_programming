@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Check an object class. """
+
 
 def is_same_class(obj, a_class):
     """ Return whether obj is True or False.
@@ -8,5 +10,4 @@ def is_same_class(obj, a_class):
     """
     if type(obj) == a_class:
         return True
-    else:
-        return False
+    return False

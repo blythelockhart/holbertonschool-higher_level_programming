@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Check an object class. """
+
 
 def inherits_from(obj, a_class):
     """ Return whether an object is inherited from the specific class.
@@ -8,5 +10,4 @@ def inherits_from(obj, a_class):
     """
     if type(obj) is not a_class and issubclass(type(obj), a_class):
         return True
-    else:
-        return False
+    return False
