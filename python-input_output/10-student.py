@@ -21,11 +21,8 @@ class Student:
             attrs (list): A list of attribute names as strings.
         """
         dictionary = {}
-        if type(attrs) is list and attrs is not None:
-            for i in attrs:
-                if type(i) is not str:
-                    return self.__dict__
-                if i in self.__dict__.keys():
-                    dictionary[i] = self.__dict__[i]
+        if type(attrs) is list and attrs is not None
+        and all(type(i) is str for i in attrs):
+            dictionary = {j: getattr(self, j) for j in attrs if hasattr(self, j)}
             return dictionary
         return self.__dict__
