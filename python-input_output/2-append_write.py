@@ -3,12 +3,12 @@
 
 
 def append_write(filename="", text=""):
-    """ Appends a string to a text file, and
-        returns the number of characters written.
+    """ Append a string to a text file, and
+        return the number of characters written.
     Args:
         filename (str): The file to write in.
-        test (str): The text to write.
+        text (str): The text to write.
     """
-    with open(filename, "w", encoding="utf-8") as Phile:
+    with open(filename, "a", encoding="utf-8") as Phile:
         Phile.write(text)
         return len(text)

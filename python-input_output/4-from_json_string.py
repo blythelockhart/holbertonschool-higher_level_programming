@@ -5,9 +5,9 @@
 import json
 
 
-def to_json_string(my_obj):
-    """ Return an object represented by a JSON string.
+def from_json_string(my_str):
+    """ Return an object representation of a JSON string.
     Args:
-        my_obj (str): The object to represent as a string.
+        my_str (str): The object to represent as a string.
     """
-    return json.loads(my_obj)
+    return json.loads(my_str)

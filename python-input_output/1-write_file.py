@@ -7,7 +7,7 @@ def write_file(filename="", text=""):
         returns the number of characters written.
     Args:
         filename (str): The file to write in.
-        test (str): The text to write.
+        text (str): The text to write.
     """
     with open(filename, "w", encoding="utf-8") as Phile:
         Phile.write(text)

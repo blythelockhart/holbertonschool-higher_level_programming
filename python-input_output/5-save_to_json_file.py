@@ -12,4 +12,4 @@ def save_to_json_file(my_obj, filename):
         filename (str): The file to write in.
     """
     with open(filename, 'w', encoding='utf-8') as Phile:
-        Phile.write(json.dump(my_obj))
+        json.dump(my_obj, Phile)
