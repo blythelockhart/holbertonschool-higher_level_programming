@@ -14,6 +14,10 @@ class Rectangle(Base):
             y (int): The y variable.
             id (int): The id.
         """
+        self.value_validate(width, 'width')
+        self.value_validate(height, 'height')
+        self.value_validate(x, 'x')
+        self.value_validate(y, 'y')
         self.__width = width
         self.__height = height
         self.__x = x
@@ -87,7 +91,7 @@ class Rectangle(Base):
         if attr in ('width', 'height'):
             if value <= 0:
                 raise ValueError('{} must be > 0'.format(attr))
-        elif attr in ('x', 'y'):
+        if attr in ('x', 'y'):
             if value < 0:
                 raise ValueError('{} must be >= 0'.format(attr))
 
@@ -127,7 +131,7 @@ class Rectangle(Base):
         kwarg = kwargs.items()
         if len(args) > 0:
             for i in range(len(args)):
-                setattr(self, arg_string[i], args[i])
+                setattr(self, arg[i], args[i])
         else:
             for kw, val in kwarg:
                 if hasattr(self, kw):
