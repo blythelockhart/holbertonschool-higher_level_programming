@@ -20,9 +20,10 @@ if __name__ == '__main__':
                                host="localhost",
                                port=3306)
     cursor = database.cursor()
+    state = sys.argv[4]
     cursor.execute("SELECT cities.id, cities.name FROM cities JOIN states ON \
-                   cities.state_id = states.id WHERE states.name LIKE %s \
-                   ORDER BY cities.id", (argv[4],))
+                   cities.state_id = states.id WHERE states.name =  %s \
+                   ORDER BY cities.id", (state,))
     cities = cursor.fetchall()
 
     for city in cities:
