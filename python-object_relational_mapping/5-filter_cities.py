@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Takes in the name of a state as an argument and lists all
-cities of that state, using the database 'hbtn_0e_4_usa'.
+Takes in the name of a state as an argument
+and lists all cities of that state.
 """
 
 
@@ -14,16 +14,18 @@ if __name__ == '__main__':
     Takes in the name of a state as an argument and lists all
     cities of that state, using the database 'hbtn_0e_4_usa'.
     """
-    database = MySQLdb.connect(user=argv[1],
-                               passwd=argv[2],
-                               db=argv[3],
+    username = argv[1]
+    password = argv[2]
+    database_name = argv[3]
+    state_name = argv[4]
+    database = MySQLdb.connect(user=username,
+                               passwd=password,
+                               db=database_name,
                                host="localhost",
                                port=3306)
     cursor = database.cursor()
-    state_name = argv[4]
-    cursor.execute("SELECT cities.name FROM cities INNER JOIN states ON \
-                   cities.state_id = states.id WHERE states.name =  %s \
-                   ORDER BY cities.id", (state_name,))
+    cursor.execute("SELECT name FROM cities WHERE states_id IN (SELECT id \
+                   FROM states WHERE name = %s ORDER BY id", (state_name,))
     cities = cursor.fetchall()
 
     for city in cities:
