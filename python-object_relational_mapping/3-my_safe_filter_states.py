@@ -20,8 +20,9 @@ if __name__ == '__main__':
                                host="localhost",
                                port=3306)
     cursor = database.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id", (argv[4],))
+    cursor.execute("SELECT * FROM states WHERE name \
+                   LIKE %s ORDER BY id", (argv[4],))
     states = cursor.fetchall()
 
     for state in states:
-            print(state)
+        print(state)
