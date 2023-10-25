@@ -20,10 +20,10 @@ if __name__ == '__main__':
                                host="localhost",
                                port=3306)
     cursor = database.cursor()
-    state = argv[4]
-    cursor.execute("SELECT cities.id, cities.name FROM cities JOIN states ON \
+    state_name = argv[4]
+    cursor.execute("SELECT cities.name FROM cities INNER JOIN states ON \
                    cities.state_id = states.id WHERE states.name =  %s \
-                   ORDER BY cities.id", (state,))
+                   ORDER BY cities.id", (state_name,))
     cities = cursor.fetchall()
 
     for city in cities:
