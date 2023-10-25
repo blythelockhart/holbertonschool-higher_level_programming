@@ -6,7 +6,7 @@ and lists all cities of that state.
 
 
 import MySQLdb
-from sys import argv
+import sys
 
 
 if __name__ == '__main__':
@@ -14,10 +14,10 @@ if __name__ == '__main__':
     Takes in the name of a state as an argument and lists all
     cities of that state, using the database 'hbtn_0e_4_usa'.
     """
-    username = argv[1]
-    password = argv[2]
-    database_name = argv[3]
-    state_name = argv[4]
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    state_name = sys.argv[4]
     database = MySQLdb.connect(user=username,
                                passwd=password,
                                db=database_name,
