@@ -1,10 +1,9 @@
 #!/usr/bin/node
 
-const arg1 = process.argv[2];
-const int1 = parseInt(arg1);
+const arg1 = parseInt(process.argv[2]);
 
-if (!isNaN(int1)) {
-  for (let i = 0; i < int1; i++) {
+if (!isNaN(arg1)) {
+  for (let i = 0; i < arg1; i++) {
     console.log('C is fun');
   }
 } else {
