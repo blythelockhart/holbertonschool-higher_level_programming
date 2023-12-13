@@ -19,10 +19,7 @@ request.get(apiUrl, (error, response, body) => {
     // Parse the JSON response
     const todosData = JSON.parse(body);
 
-    // Filter completed tasks
-    const completedTasks = todosData.filter(task => task.completed);
-
-    // Create a map to count completed tasks by user id
+    // Count completed tasks by user id
     const completedCount = {};
 
     todosData.forEach(task => {
