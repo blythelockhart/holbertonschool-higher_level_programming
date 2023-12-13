@@ -23,18 +23,16 @@ request.get(apiUrl, (error, response, body) => {
     const completedTasks = todosData.filter(task => task.completed);
 
     // Create a map to count completed tasks by user id
-    const completedCountByUserId = new Map();
+    const completedCount = {};
 
-    completedTasks.forEach(task => {
-      const userId = task.userId;
+    todosData.forEach(task => {
+      if (task.completed) {
+        const userId = task.userId;
 
-      completedCountByUserId.set(userId, (completedCountByUserId.get(userId) || 0) + 1);
+        completedCount[userId] = (completedCount[userId] || 0) + 1;
+      }
     });
-
-    // Print the number of completed tasks by user id
-    completedCountByUserId.forEach((count, userId) => {
-      console.log(`'${userId}': ${count}`);
-    });
+    // Print the result in JSON format
+    console.log(JSON.stringify(completedCount, null, 2));
   }
 });
-
